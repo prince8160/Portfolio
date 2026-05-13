@@ -2,19 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, LogOut, User as UserIcon } from 'lucide-react';
+import { Menu, X, LogOut, User as UserIcon, Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { auth } from '@/lib/firebase';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { AuthModal } from './AuthModal';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Portfolio', href: '/#portfolio' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export function Navbar() {
@@ -81,6 +81,19 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
+          
+          <div className="flex items-center gap-3 ml-2 border-l border-white/10 pl-6">
+            <a href="https://github.com/prince8160" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-400 transition-colors hover:scale-110">
+              <Github size={18} />
+            </a>
+            <a href="https://www.linkedin.com/in/prince-kala-b38754334" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-400 transition-colors hover:scale-110">
+              <Linkedin size={18} />
+            </a>
+            <a href="mailto:kallaprince221@gmail.com" className="text-gray-400 hover:text-orange-400 transition-colors hover:scale-110">
+              <Mail size={18} />
+            </a>
+          </div>
+
             <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
               {!user ? (
                 <>
@@ -129,7 +142,7 @@ export function Navbar() {
                           onClick={() => setIsUserMenuOpen(false)}
                           className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
                         >
-                          Booking Project
+                          Book Project
                         </Link>
                         <button 
                           onClick={handleSignOut}
@@ -178,6 +191,18 @@ export function Navbar() {
             </div>
             
             <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4 max-w-sm mx-auto w-full">
+              <div className="flex items-center justify-center gap-6 mb-4">
+                <a href="https://github.com/prince8160" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-orange-400 hover:bg-orange-600/10 transition-colors">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/prince-kala-b38754334" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-orange-400 hover:bg-orange-600/10 transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="mailto:kallaprince221@gmail.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-orange-400 hover:bg-orange-600/10 transition-colors">
+                  <Mail size={20} />
+                </a>
+              </div>
+              
               {!user ? (
                 <>
                   <button 

@@ -21,15 +21,28 @@ export function Footer() {
               Premium web development services crafting bespoke digital experiences and high-performance applications.
             </p>
             <div className="flex items-center gap-4">
-              {[Github, Linkedin, Mail].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a
+                href="https://github.com/prince8160"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-600/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Github size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/prince-kala-b38754334"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-600/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a
+                href="mailto:kallaprince221@gmail.com"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-600/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Mail size={18} />
+              </a>
             </div>
           </div>
           
@@ -38,7 +51,7 @@ export function Footer() {
             <ul className="space-y-4">
               {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                  <Link href={`/#${item.toLowerCase()}`} className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
                     {item}
                   </Link>
                 </li>
@@ -49,10 +62,14 @@ export function Footer() {
           <div>
             <h4 className="text-white font-medium mb-6 tracking-wide uppercase text-sm">Legal</h4>
             <ul className="space-y-4">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
-                    {item}
+              {[
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms of Service', path: '/terms-of-service' },
+                { name: 'Cookie Policy', path: '/cookie-policy' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.path} className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                    {item.name}
                   </Link>
                 </li>
               ))}

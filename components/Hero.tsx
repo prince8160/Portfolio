@@ -54,7 +54,7 @@ export function Hero() {
               href="#contact"
               className="group flex items-center gap-2 bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:scale-105"
             >
-              Booking Project
+              Book Project
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -71,15 +71,28 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex items-center gap-6 pt-8"
           >
-            {[Github, Linkedin, Mail].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300"
-              >
-                <Icon size={18} />
-              </a>
-            ))}
+            <a
+              href="https://github.com/prince8160"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prince-kala-b38754334"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href="mailto:kallaprince221@gmail.com"
+              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+            >
+              <Mail size={18} />
+            </a>
           </motion.div>
         </div>
 

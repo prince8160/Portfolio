@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, ArrowRight, LogOut, Loader2 } from 'lucide-react';
+import { Mail, Phone, ArrowRight, LogOut, Loader2, Github, Linkedin } from 'lucide-react';
 import { auth, db } from '../lib/firebase';
 import { 
   onAuthStateChanged, 
@@ -126,33 +126,49 @@ export function Contact() {
               Let&apos;s Build <br /> Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Great.</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12 font-light max-w-md">
-              Looking for a premium developer to bring your vision to life? Let&apos;s discuss your project and see how we can work together.
+              If you have any questions, feedback, business inquiries, or support-related concerns, feel free to contact us anytime. We are committed to providing professional web development services, modern digital solutions, and the best possible user experience.
             </p>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-400">
-                  <Mail size={24} />
+            <div className="flex flex-wrap items-center gap-6 pt-4 mb-16">
+              <a 
+                href="https://github.com/prince8160" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex flex-col items-center justify-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:text-orange-400 group-hover:bg-orange-600/20 group-hover:border-orange-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] group-hover:-translate-y-2">
+                  <Github size={28} className="transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:kallaprince221@gmail.com" className="text-xl text-white hover:text-orange-400 transition-colors">
-                    kallaprince221@gmail.com
-                  </a>
-                </div>
-              </div>
+                <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium text-orange-400 tracking-wide translate-y-2 group-hover:translate-y-0">
+                  GitHub
+                </span>
+              </a>
               
-              <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-400">
-                  <Phone size={24} />
+              <a 
+                href="https://www.linkedin.com/in/prince-kala-b38754334" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex flex-col items-center justify-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:text-orange-400 group-hover:bg-orange-600/20 group-hover:border-orange-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] group-hover:-translate-y-2">
+                  <Linkedin size={28} className="transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-                  <a href="tel:8160638576" className="text-xl text-white hover:text-orange-400 transition-colors">
-                    8160638576
-                  </a>
+                <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium text-orange-400 tracking-wide translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
+                  LinkedIn
+                </span>
+              </a>
+
+              <a 
+                href="mailto:kallaprince221@gmail.com" 
+                className="group relative flex flex-col items-center justify-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:text-orange-400 group-hover:bg-orange-600/20 group-hover:border-orange-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] group-hover:-translate-y-2">
+                  <Mail size={28} className="transition-transform duration-300 group-hover:scale-110" />
                 </div>
-              </div>
+                <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium text-orange-400 tracking-wide translate-y-2 group-hover:translate-y-0">
+                  Email
+                </span>
+              </a>
             </div>
           </motion.div>
 
