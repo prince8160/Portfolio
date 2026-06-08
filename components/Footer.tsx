@@ -1,7 +1,6 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import Link from "next/link";
 
 export function Footer() {
   return (
@@ -11,7 +10,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <Link
+            <a
               href="#home"
               className="text-3xl font-display font-bold tracking-tighter block mb-6"
             >
@@ -19,7 +18,7 @@ export function Footer() {
                 KALLA
               </span>{" "}
               PRINCE
-            </Link>
+            </a>
             <p className="text-gray-400 font-light max-w-sm leading-relaxed mb-8">
               Premium web development services crafting bespoke digital
               experiences and high-performance applications.
@@ -58,12 +57,12 @@ export function Footer() {
               {["Home", "About", "Services", "Portfolio", "Contact"].map(
                 (item) => (
                   <li key={item}>
-                    <Link
+                    <a
                       href={`/#${item.toLowerCase()}`}
                       className="text-gray-400 hover:text-orange-400 transition-colors text-sm"
                     >
                       {item}
-                    </Link>
+                    </a>
                   </li>
                 ),
               )}
@@ -81,12 +80,12 @@ export function Footer() {
                 { name: "Cookie Policy", path: "/cookie-policy" },
               ].map((item) => (
                 <li key={item.name}>
-                  <Link
+                  <a
                     href={item.path}
                     className="text-gray-400 hover:text-orange-400 transition-colors text-sm"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

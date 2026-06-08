@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -71,10 +72,13 @@ export function Portfolio() {
             >
               <div className="relative overflow-hidden rounded-3xl mb-6 glass-panel aspect-[4/3] border border-white/5">
                 <div className="absolute inset-0 bg-black/40 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm" />
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  referrerPolicy="no-referrer"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
 
                 {/* Hover Overlay */}

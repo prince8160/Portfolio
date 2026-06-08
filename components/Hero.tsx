@@ -1,7 +1,28 @@
 "use client";
 
-import { motion } from "motion/react";
-import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { motion, animate } from "motion/react";
+import { Github, Linkedin, Mail, ArrowRight, CheckCircle } from "lucide-react";
+
+function Counter({ from, to }: { from: number; to: number }) {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const node = nodeRef.current;
+    if (node) {
+      const controls = animate(from, to, {
+        duration: 2,
+        onUpdate(value) {
+          node.textContent = Math.round(value).toString() + "+";
+        },
+      });
+
+      return () => controls.stop();
+    }
+  }, [from, to]);
+
+  return <span ref={nodeRef} />;
+}
 
 export function Hero() {
   return (
@@ -78,30 +99,46 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="flex items-center gap-6 pt-8"
+            className="flex flex-wrap items-center gap-6 pt-8 md:gap-8"
           >
-            <a
-              href="https://github.com/prince8160"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
-            >
-              <Github size={18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/prince-kala-b38754334"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a
-              href="mailto:kallaprince221@gmail.com"
-              className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
-            >
-              <Mail size={18} />
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/prince8160"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Github size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/prince-kala-b38754334"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a
+                href="mailto:kallaprince221@gmail.com"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Mail size={18} />
+              </a>
+            </div>
+
+            <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500/10 border border-orange-500/20 text-orange-500">
+                <CheckCircle size={20} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-white font-display leading-none">
+                  <Counter from={0} to={10} />
+                </span>
+                <span className="text-xs text-gray-400 font-medium uppercase tracking-wider mt-1">Completed Projects</span>
+              </div>
+            </div>
           </motion.div>
         </div>
         {/* Right Content - Image */}

@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, LogOut, User as UserIcon } from "lucide-react";
-import Link from "next/link";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { AuthModal } from "./AuthModal";
@@ -65,7 +64,7 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link
+          <a
             href="#home"
             className="text-2xl font-display font-bold tracking-tighter"
           >
@@ -73,18 +72,18 @@ export function Navbar() {
               KALLA
             </span>{" "}
             PRINCE
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors tracking-wide"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
 
             <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
@@ -140,13 +139,13 @@ export function Navbar() {
                             {user.displayName || user.email}
                           </p>
                         </div>
-                        <Link
+                        <a
                           href="#contact"
                           onClick={() => setIsUserMenuOpen(false)}
                           className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
                         >
                           Book Project
-                        </Link>
+                        </a>
                         <button
                           onClick={handleSignOut}
                           className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:text-red-400 hover:bg-red-500/10 transition-colors mt-1"
@@ -182,14 +181,14 @@ export function Navbar() {
             >
               <div className="flex flex-col items-center gap-6 mb-10">
                 {navLinks.map((link) => (
-                  <Link
+                  <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-2xl font-medium text-gray-300 hover:text-white transition-colors font-display"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
 

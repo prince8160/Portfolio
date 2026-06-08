@@ -10,6 +10,8 @@ import {
   Loader2,
   Github,
   Linkedin,
+  Copy,
+  Check,
 } from "lucide-react";
 import { auth, db } from "../lib/firebase";
 import {
@@ -34,6 +36,7 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingError, setBookingError] = useState("");
+  const [hasCopied, setHasCopied] = useState(false);
 
   // Form states
   const [firstName, setFirstName] = useState("");
@@ -130,6 +133,12 @@ export function Contact() {
     }
   };
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("kallaprince221@gmail.com");
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="py-24 relative">
       <div className="absolute top-[30%] right-[10%] w-[400px] h-[400px] bg-orange-600/10 blur-[150px] rounded-full pointer-events-none z-0" />
@@ -207,6 +216,24 @@ export function Contact() {
                   Email
                 </span>
               </a>
+            </div>
+
+            <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl w-fit mb-16 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+              <Mail className="text-orange-500 w-5 h-5 hidden sm:block" />
+              <span className="text-gray-300 font-medium">
+                kallaprince221@gmail.com
+              </span>
+              <button
+                onClick={handleCopyEmail}
+                className="w-10 h-10 rounded-xl bg-black/30 border border-white/10 flex items-center justify-center text-gray-400 hover:text-orange-400 hover:bg-orange-500/10 hover:border-orange-500/30 transition-all duration-300"
+                aria-label="Copy email address"
+              >
+                {hasCopied ? (
+                  <Check size={18} className="text-green-500" />
+                ) : (
+                  <Copy size={18} />
+                )}
+              </button>
             </div>
           </motion.div>
 
