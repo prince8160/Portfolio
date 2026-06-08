@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { motion } from "motion/react";
+import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-6 w-full grid lg:grid-cols-2 gap-8 lg:gap-4 items-center">
         {/* Left Content */}
         <div className="flex flex-col justify-center space-y-8 z-10 lg:pr-8">
@@ -41,7 +44,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-gray-400 text-lg md:text-xl font-light max-w-xl leading-relaxed"
           >
-            Creative web developer focused on building modern, responsive, and visually engaging websites with clean design, smooth user experience, and premium-quality digital aesthetics.
+            Creative web developer focused on building modern, responsive, and
+            visually engaging websites with clean design, smooth user
+            experience, and premium-quality digital aesthetics.
           </motion.p>
 
           <motion.div
@@ -54,14 +59,18 @@ export function Hero() {
               href="#contact"
               className="group flex items-center gap-2 bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:scale-105"
             >
-              Book Project
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              Contact Me
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </a>
             <a
-              href="#portfolio"
-              className="flex items-center gap-2 px-8 py-4 rounded-full font-medium text-white border border-white/20 transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              href="/resume.pdf"
+              download
+              className="flex items-center gap-2 px-8 py-4 rounded-full font-medium text-white border border-orange-500/50 bg-orange-500/10 transition-all duration-300 hover:bg-orange-500/20 hover:border-orange-500"
             >
-              View Work
+              Download Resume
             </a>
           </motion.div>
 
@@ -95,7 +104,7 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-{/* Right Content - Image */}
+        {/* Right Content - Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

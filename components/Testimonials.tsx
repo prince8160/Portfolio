@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { Quote } from 'lucide-react';
+import { motion } from "motion/react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
     text: "Kalla transforms complex requirements into elegant, seamless interfaces. His attention to detail and premium design sensibility elevated our platform beyond our expectations.",
     author: "Sarah Jenkins",
     role: "CEO, Aura Fintech",
-    image: "https://picsum.photos/seed/sarah/100/100"
+    image: "https://picsum.photos/seed/sarah/100/100",
   },
   {
     text: "Working with Kalla was a revelation. He doesn't just write code; he crafts digital experiences. The bespoke 3D viewer he built for us doubled our engagement metrics.",
     author: "Marcus Thorne",
     role: "Director, Nexus Retail",
-    image: "https://picsum.photos/seed/marcus/100/100"
-  }
+    image: "https://picsum.photos/seed/marcus/100/100",
+  },
 ];
 
 export function Testimonials() {
@@ -29,8 +29,12 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-orange-500 font-medium tracking-widest uppercase text-sm mb-3 block">Client Words</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold">Trusted by Leaders</h2>
+          <span className="text-orange-500 font-medium tracking-widest uppercase text-sm mb-3 block">
+            Client Words
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold">
+            Trusted by Leaders
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -48,10 +52,16 @@ export function Testimonials() {
                 &quot;{t.text}&quot;
               </p>
               <div className="flex items-center gap-4">
-                <img src={t.image} alt={t.author} className="w-14 h-14 rounded-full object-cover border border-white/20" />
+                <img
+                  src={t.image}
+                  alt={t.author}
+                  className="w-14 h-14 rounded-full object-cover border border-white/20"
+                />
                 <div>
                   <h4 className="text-white font-bold">{t.author}</h4>
-                  <p className="text-orange-400 text-sm font-medium">{t.role}</p>
+                  <p className="text-orange-400 text-sm font-medium">
+                    {t.role}
+                  </p>
                 </div>
               </div>
             </motion.div>
