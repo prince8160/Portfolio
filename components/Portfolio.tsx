@@ -1,41 +1,36 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
   {
-    title: "Nexus E-Commerce",
-    category: "Full-Stack Web App",
-    image: "https://picsum.photos/seed/nexus/800/600",
+    title: "Tanmay Dental Clinic",
+    category: "Dental Clinic Website",
+    image: "/images/tanmaydentalclinic.png",
     description:
-      "A premium headless e-commerce platform with a bespoke 3D product viewer and seamless checkout.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
+      "A premium dental clinic website built with a modern design, clear service presentation, appointment-focused layout, and responsive user experience.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    url: "https://tanmaydentalclinic.netlify.app/",
   },
   {
-    title: "Aura Fintech",
-    category: "UI/UX & Frontend",
-    image: "https://picsum.photos/seed/aura/800/600",
+    title: "Chehar Dental Clinic",
+    category: "Dental Clinic Website",
+    image: "/images/chehardentalclinic.png",
     description:
-      "Modern banking dashboard featuring real-time data visualization and glassmorphism interface.",
-    technologies: ["TypeScript", "React", "Recharts", "Framer Motion"],
+      "A modern and responsive dental clinic website designed to showcase services, clinic information, contact details, and improve patient engagement.",
+    technologies: ["React", "Tailwind CSS", "Next.js"],
+    url: "https://chehardentalclinic.netlify.app/",
   },
   {
-    title: "Vertex Real Estate",
-    category: "Corporate Website",
-    image: "https://picsum.photos/seed/vertex/800/600",
+    title: "Deesa Dental",
+    category: "Dental Clinic Website",
+    image: "/images/DEESADENTAL.png",
     description:
-      "Luxury property listing platform with immersive virtual tours and bespoke property filters.",
-    technologies: ["Next.js", "Tailwind CSS", "Mapbox", "Prisma"],
-  },
-  {
-    title: "Synapse AI Platform",
-    category: "SaaS Application",
-    image: "https://picsum.photos/seed/synapse/800/600",
-    description:
-      "Intuitive AI dashboard for generating architectural renders with complex prompt engineering tools.",
-    technologies: ["React", "Node.js", "OpenAI API", "MongoDB"],
+      "A professional dental clinic website featuring a clean user interface, service sections, contact information, and mobile-friendly design.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    url: "https://frabjous-gaufre-155dc9.netlify.app/",
   },
 ];
 
@@ -56,11 +51,11 @@ export function Portfolio() {
             Selected Works
           </span>
           <h2 className="text-4xl md:text-6xl font-display font-bold">
-            Featured Projects
+            Demo Projects
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -85,18 +80,13 @@ export function Portfolio() {
                 <div className="absolute inset-0 z-20 flex flex-col justify-center items-center p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-5 py-2.5 rounded-full bg-orange-500 text-white flex items-center justify-center gap-2 hover:bg-orange-600 transition-colors font-medium text-sm"
                     >
                       <ExternalLink size={16} />
                       Live Demo
-                    </a>
-                    <a
-                      href="#"
-                      className="px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 hover:bg-white/20 transition-colors font-medium text-sm"
-                    >
-                      <Github size={16} />
-                      GitHub
                     </a>
                   </div>
                 </div>

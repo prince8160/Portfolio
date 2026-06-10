@@ -38,14 +38,7 @@ export function AuthModal({
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Reset states when mode changes
-  useEffect(() => {
-    setError("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-    setName("");
-  }, [mode, isOpen]);
+  // States are reset manually when closing via the wrapper or action.
 
   const saveUserToFirestore = async (user: any, additionalData?: any) => {
     try {
@@ -144,6 +137,15 @@ export function AuthModal({
     }
   };
 
+  const handleClose = () => {
+    setError("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    setName("");
+    onClose();
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -152,7 +154,7 @@ export function AuthModal({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
             className={`fixed inset-0 z-[60] backdrop-blur-md transition-colors duration-700 ${mode === "login" ? "bg-black/80" : "bg-indigo-50/60"}`}
           />
           <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
@@ -173,7 +175,7 @@ export function AuthModal({
                   <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-black/0 to-transparent pointer-events-none" />
 
                   <button
-                    onClick={onClose}
+                    onClick={handleClose}
                     className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-colors z-10"
                   >
                     <X size={16} />
@@ -303,7 +305,7 @@ export function AuthModal({
                   </button>
 
                   <p className="mt-5 text-center text-[13px] text-gray-500 relative z-10">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?{" "}
                     <button
                       onClick={() => setMode("signup")}
                       className="text-white hover:text-blue-400 font-medium transition-colors"
@@ -396,7 +398,7 @@ export function AuthModal({
                   {/* Right Side: Bright Form */}
                   <div className="w-full md:w-[55%] p-7 sm:p-10 relative bg-slate-50/50">
                     <button
-                      onClick={onClose}
+                      onClick={handleClose}
                       className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-200 text-gray-500 hover:text-pink-500 hover:border-pink-200 hover:bg-pink-50 transition-all z-10"
                     >
                       <X size={16} />
