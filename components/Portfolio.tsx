@@ -73,7 +73,7 @@ export function Portfolio() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   referrerPolicy="no-referrer"
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-contain p-4 bg-black/40 transition-transform duration-1000 group-hover:scale-105"
                 />
 
                 {/* Hover Overlay */}
