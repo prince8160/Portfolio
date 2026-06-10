@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Download } from "lucide-react";
+import Image from "next/image";
 
 export function About() {
   return (
@@ -79,10 +80,13 @@ export function About() {
             className="relative h-[600px] rounded-3xl overflow-hidden glass-panel group"
           >
             <div className="absolute inset-0 bg-black/40 z-10 transition-opacity duration-500 group-hover:bg-black/20" />
-            <img
-              src="https://picsum.photos/seed/kallaprince/600/800"
+            <Image
+              src="/images/vision.jpg"
               alt="Creative Space"
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              referrerPolicy="no-referrer"
+              className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
             <div className="absolute inset-0 border border-white/10 rounded-3xl z-20 pointer-events-none" />
             <div className="absolute bottom-8 left-8 right-8 z-30">
