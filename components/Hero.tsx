@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, animate } from "motion/react";
 import { Github, Linkedin, Mail, ArrowRight, CheckCircle } from "lucide-react";
+import Image from "next/image";
+import { ResumeModal } from "./ResumeModal";
 
 function Counter({ from, to }: { from: number; to: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
@@ -25,6 +27,8 @@ function Counter({ from, to }: { from: number; to: number }) {
 }
 
 export function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -86,13 +90,12 @@ export function Hero() {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </a>
-            <a
-              href="/resume.pdf"
-              download
+            <button
+              onClick={() => setIsResumeOpen(true)}
               className="flex items-center gap-2 px-8 py-4 rounded-full font-medium text-white border border-orange-500/50 bg-orange-500/10 transition-all duration-300 hover:bg-orange-500/20 hover:border-orange-500"
             >
-              Download Resume
-            </a>
+              View Resume
+            </button>
           </motion.div>
 
           <motion.div
@@ -159,10 +162,13 @@ export function Hero() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
 
-            <img
+            <Image
               src="/images/page1.png"
               alt="Kalla Prince"
-              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              fill
+              sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 360px"
+              referrerPolicy="no-referrer"
+              className="absolute inset-0 object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
           </motion.div>
 
@@ -180,6 +186,11 @@ export function Hero() {
           />
         </motion.div>
       </div>
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+        imagePath="/images/Kala_Prince_Resume-1_page-0001.jpg"
+      />
     </section>
   );
 }

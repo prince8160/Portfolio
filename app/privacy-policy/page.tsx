@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
               <p>
                 Our application utilizes Google Firebase for backend deployment, authentication, and database services. 
                 When you sign in using Google Auth or Email/Password, Firebase securely processes your login data.
-                Please refer to Google's Privacy Policy to understand how Firebase manages data as a sub-process.
+                Please refer to Google&apos;s Privacy Policy to understand how Firebase manages data as a sub-process.
               </p>
             </section>
             

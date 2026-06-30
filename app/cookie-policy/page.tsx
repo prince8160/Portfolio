@@ -51,7 +51,7 @@ export default function CookiePolicy() {
             <section>
               <h2 className="text-xl font-medium text-white mb-4">4. Your Cookie Choices</h2>
               <p>
-                If you'd like to delete cookies or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser. 
+                If you&apos;d like to delete cookies or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser. 
                 Please note, however, that if you delete cookies or refuse to accept them, you might not be able to log in, you may not be able to store your preferences, and some of our pages might not display properly.
               </p>
             </section>

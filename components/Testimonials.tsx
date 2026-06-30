@@ -52,6 +52,7 @@ export function Testimonials() {
                 &quot;{t.text}&quot;
               </p>
               <div className="flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.image}
                   alt={t.author}

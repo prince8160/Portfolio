@@ -367,16 +367,19 @@ export function AuthModal({
                     <div className="relative z-10 p-3.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl w-fit shadow-xl">
                       <div className="flex items-center gap-3">
                         <div className="flex -space-x-2.5">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src="https://i.pravatar.cc/100?img=4"
                             className="w-8 h-8 rounded-full border-2 border-purple-500"
                             alt="Avatar"
                           />
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src="https://i.pravatar.cc/100?img=5"
                             className="w-8 h-8 rounded-full border-2 border-pink-500"
                             alt="Avatar"
                           />
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src="https://i.pravatar.cc/100?img=6"
                             className="w-8 h-8 rounded-full border-2 border-indigo-500"

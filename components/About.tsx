@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Download } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { ResumeModal } from "./ResumeModal";
 
 export function About() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -39,7 +43,7 @@ export function About() {
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <h4 className="text-4xl font-display font-bold text-white mb-2">
-                    1+
+                    2+
                   </h4>
                   <p className="text-sm tracking-wide uppercase text-orange-500 font-medium">
                     Years Experience
@@ -47,7 +51,7 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="text-4xl font-display font-bold text-white mb-2">
-                    50+
+                    30+
                   </h4>
                   <p className="text-sm tracking-wide uppercase text-orange-500 font-medium">
                     Projects Delivered
@@ -55,20 +59,19 @@ export function About() {
                 </div>
               </div>
 
-              <a
-                href="/resume/resume.pdf"
-                download="Prince-Kalla-Resume.pdf"
+              <button
+                onClick={() => setIsResumeOpen(true)}
                 className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-white font-medium overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/10 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] mt-4"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600/0 via-orange-500/10 to-orange-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-100%] group-hover:translate-x-[100%]" />
                 <span className="relative z-10 flex items-center gap-2">
-                  Download Resume{" "}
-                  <Download
+                  View Resume{" "}
+                  <ExternalLink
                     size={18}
                     className="group-hover:-translate-y-1 group-hover:text-orange-400 transition-all duration-300"
                   />
                 </span>
-              </a>
+              </button>
             </div>
           </motion.div>
 
@@ -101,6 +104,11 @@ export function About() {
           </motion.div>
         </div>
       </div>
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+        imagePath="/images/Kala_Prince_Resume-1_page-0001.jpg"
+      />
     </section>
   );
 }

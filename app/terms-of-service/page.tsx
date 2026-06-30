@@ -58,7 +58,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl font-medium text-white mb-4">5. Service Limitations</h2>
               <p>
-                The materials on this website are provided on an 'as is' basis. We make no warranties, expressed or implied, 
+                The materials on this website are provided on an &apos;as is&apos; basis. We make no warranties, expressed or implied, 
                 and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, 
                 or non-infringement of intellectual property or other violation of rights.
               </p>
