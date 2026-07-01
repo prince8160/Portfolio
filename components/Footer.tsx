@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -45,6 +45,14 @@ export function Footer() {
                 className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-600/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
               >
                 <Mail size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/web.district?igsh=MXY4eDRxbXp5cWQ0ZQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-600/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] hover:-translate-y-1"
+              >
+                <Instagram size={18} />
               </a>
             </div>
           </div>

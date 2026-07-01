@@ -8,6 +8,7 @@ import {
   Linkedin,
   Copy,
   Check,
+  Instagram,
 } from "lucide-react";
 
 export function Contact() {
@@ -79,6 +80,23 @@ export function Contact() {
               </div>
               <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium text-orange-400 tracking-wide translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
                 LinkedIn
+              </span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/web.district?igsh=MXY4eDRxbXp5cWQ0ZQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col items-center justify-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:text-orange-400 group-hover:bg-orange-600/20 group-hover:border-orange-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] group-hover:-translate-y-2">
+                <Instagram
+                  size={28}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium text-orange-400 tracking-wide translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
+                Instagram
               </span>
             </a>
 
